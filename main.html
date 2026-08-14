@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uwontfindus.org</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: black;
+            color: #666;
+            font-family: "Times New Roman", serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .page {
+            width: 100%;
+        }
+
+        .pfp {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 1px solid #222;
+        }
+
+        h1 {
+            margin: 12px 0 5px;
+            font-size: 20px;
+            font-weight: normal;
+            color: #777;
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        a {
+            color: #00008b;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: #00008b;
+        }
+
+        a:active,
+        a:focus {
+            color: yellow;
+        }
+
+        hr {
+            width: 250px;
+            border: 0;
+            border-top: 1px solid #222;
+            margin: 18px auto;
+        }
+
+        .bottom {
+            color: #222;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <img
+            class="pfp"
+            src="a.jpg"
+        >
+
+        <p>hello there</p>
+
+        <hr>
+
+        <p>
+            <a href="https://uwontfindus.org/" target="_blank">coming soon...</a>
+        </p>
+
+        <hr>
+
+        <p class="bottom" id="ip">down me: </p>
+
+    </div>
+ <script>
+        fetch("https://api.ipify.org?format=json")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("ip").textContent = data.ip;
+            })
+            .catch(() => {
+                document.getElementById("ip").textContent = "unknown";
+            });
+</script>
+</body>
+</html>
